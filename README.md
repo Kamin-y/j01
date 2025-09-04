@@ -10,7 +10,7 @@
 
 请仔细阅读代码理解其设计理念与运作机理，使用plantuml画出`hulu`目录代码的uml图，例如：
 
-<img src="http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/jwork-2025/j01/main/uml/hulu-class.puml" width="600">
+<img src="http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/jwork-2025/j01/main/uml/hulu-class.puml" width="400">
 
 请编写README.md（覆盖本仓库原有README.md），阐述示例代码是如何以面向对象方法来编码的。
 
