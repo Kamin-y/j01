@@ -6,7 +6,7 @@
 
 使用plantuml画出`hulu`目录代码的uml图(位于./uml/hulu-class.svg)，最终效果如下：
 
-![my uml](./uml/hulu-class.svg)
+![my uml](./uml/Hulu.png)
 
 绘制过程如下：
 * Creature和Grass都继承于Thing，Hulu继承于Creature
