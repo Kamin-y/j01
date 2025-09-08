@@ -15,7 +15,6 @@
 * BubbleSorter是接口Sorter的实现，一个BubbleSorter有多个Hulu（用于排序）
 * Screen用来显示当前情况，利用repaint进行重新绘制。
 
-示例代码以面向对象方法来编码的阐述：
 面向对象设计分析：
 1. 类的职责分离
 * Thing: 所有游戏实体的类，封装了位置、颜色等属性
