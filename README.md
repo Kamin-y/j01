@@ -1,27 +1,50 @@
 # J01
 
-请阅读示例项目代码。该项目运行后会打开一个图形化窗口，并在其中绘制内容，按任意键屏幕内容会刷新。
-
-## 技术背景
-
-代码的图形化绘制部分采用了github上开源的[AsciiPanel](https://github.com/trystan/AsciiPanel)。因对其进行了一点点修改，故直接将其源代码放在`asciiPanel`目录下（此部分代码可不阅读）。AsciiPanel模拟了早期计算机终端的现实方式，因其所具有的复古风，还有基于它所实现的Roguelike类型RPG游戏。
+本次作业已全部完成，这是一个修改后的README.md
 
 ## 任务一
 
-请仔细阅读代码理解其设计理念与运作机理，使用plantuml画出`hulu`目录代码的uml图，例如：
+使用plantuml画出`hulu`目录代码的uml图(位于./uml/hulu-class.svg)，最终效果如下：
 
-<img src="https://www.plantuml.com/plantuml/png/jLNVRzCm47xFNs7AIphMIRn620t6j5PeKAr5OvecT4sErffZ6zlPLetzx_WIDtR26nBIbjZVNRxxxeVTK-l0kAOMsIktmngP5i1bbcaexs6BRB9hH3DXpnbZN3eqFw54jbB6BrkGiJTCAAZokVUxlPi6o7gF_B3PebiAaFcqO2jdkDnw_CN_-xzIWBNiOxFP21ompXWKhECCU-qf8i4_1oOg-mWwz-aSKqxJg2OeUFVxv6IWAUkLhdUU9KXypHwL4LN1hkaL8CS55cpjdo5MgOGo1JkZLu2sOgzt1IjtOABGxwJIoud8pH2nw8WsfqUIO4jCdkqYuXSKX70A4rE4ZNK6IXVoEJC8hZ7OLztn6XVKw0SG1HEghva3GogFm-8cIlFrz1YPw3sqb8qnADtAeKvpgTK3hjMW1H7-GHhCq4XK8Cf6WCCl-EIpLgRYqkywlzuv3Qxzk2fJhtpB15vwxiWvda0Qehu61kJzg1TN7XgserIr1aDPqBS34urNXux3N1XwFaUudIS_SBDPtugCzSlEG4n3rvOc3cKxVxtwwyMdzJmjm_nySJ5VfmWDgUsczFQkFs0Re-pep5bbsjxPmm7obhuciPf59owOTEFoTa_6OOEbRrsUx2rnKrr7x0P_DMZT5MhmtlcuZgGy6LcA5IKGzBHKDarud-o3-jOz7qct1xnznh2Xn9Et4tRawpyvcdGI2bOgwRn6E_1HmOTgcVgy9FSgQ2ru2Ouh-TVrMXf4sL-l5RTQmFvhuwYo7sp9-H8aYcbVBAkLhDRgcqMpaEJq6VVd3qYT2MJZ0hPQ1t5cuzkC81wBzdzqN0AF0XoQcakwTo9vCDdswyWI0iRneFqzxfTUXCKg1eu1GxPqkQVfUqihWdeMN0hMMBIf8Ug9neI3VBfzC5Edk_CwcxtlBHka-zGofn9Zc2EXId1OCN0PJGsPXZ-B1Hr6yjZiipHq6Y1qo6QdAAkc5dy0">
+![my uml](./uml/hulu-class.svg)
 
-请编写README.md（覆盖本仓库原有README.md），阐述示例代码是如何以面向对象方法来编码的。
+绘制过程如下：
+* Creature和Grass都继承于Thing，Hulu继承于Creature
+* Tile上面存在不同种类的Thing，Thing在world中。
+* Hulu，Tile，Grass都存在于world中
+* BubbleSorter是接口Sorter的实现，一个BubbleSorter有多个Hulu（用于排序）
+* Screen用来显示当前情况，利用repaint进行重新绘制。
+
+示例代码以面向对象方法来编码的阐述：
+面向对象设计分析
+* 1. 类的职责分离
+* Thing: 所有游戏实体的类，封装了位置、颜色等属性
+* Creature: 抽象生物类，扩展Thing并添加移动能力
+* Hulu: 葫芦娃类，具有排名和交换能力
+* Grass: 环境实体，代表草地
+* Tile: 网格单元，管理每个位置上的实体
+
+* 2. 继承与多态
+* Thing → Creature → Hulu
+* Thing → Grass
+
+* Sorter ← BubbleSorter
+* Screen ← WorldScreen
+3. 封装性
+* 每个类都封装了特定的功能：Thing封装了实体的基本属性，World封装了世界状态管理，BubbleSorter封装了排序算法细节
 
 ## 任务二
 
-当前代码中，两个葫芦娃交换位置是瞬移方式的，请修改相关代码，是指与在现实世界两个人交换位置的方式相一致。
+现在，两个葫芦娃交换位置的方式与现实中一致，即从两边缓缓交换，过程中不相重叠，具体实现效果如下：  
+
+[j01_task2视频链接](https://www.bilibili.com/video/BV1Z8aYzXEV6/)
 
 ## 任务三
 
-请仿照BubbleSorter，实现插入排序（InsertionSorter）用其完成葫芦娃排序过程，注意同样要让葫芦娃的行为符合现实世界规则。
+实现了插入排序（InsertionSorter），每个未排序的元素都与前面的元素逐个相比较，不断交换直至自己应有的位置，葫芦娃的行为符合现实世界规则，具体实现效果如下： 
 
-有兴趣的同学可以用jMonkeyEngine等游戏引擎改写示例代码。
+[j01_task3视频链接](https://www.bilibili.com/video/BV1B7aBzTERz/)
 
-**任务二、三完成后请将运行过程录屏，发qq群或小破站。**
+
+
+**所有任务已完成，运行过程录屏发布在小破站。**
