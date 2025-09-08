@@ -16,18 +16,16 @@
 * Screen用来显示当前情况，利用repaint进行重新绘制。
 
 示例代码以面向对象方法来编码的阐述：
-面向对象设计分析
-* 1. 类的职责分离
+面向对象设计分析：
+1. 类的职责分离
 * Thing: 所有游戏实体的类，封装了位置、颜色等属性
 * Creature: 抽象生物类，扩展Thing并添加移动能力
 * Hulu: 葫芦娃类，具有排名和交换能力
 * Grass: 环境实体，代表草地
 * Tile: 网格单元，管理每个位置上的实体
-
-* 2. 继承与多态
+2. 继承与多态
 * Thing → Creature → Hulu
 * Thing → Grass
-
 * Sorter ← BubbleSorter
 * Screen ← WorldScreen
 3. 封装性
