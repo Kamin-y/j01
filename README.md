@@ -34,13 +34,13 @@
 
 现在，两个葫芦娃交换位置的方式与现实中一致，即从两边缓缓交换，过程中不相重叠，具体实现效果如下：  
 
-[j01_task2视频链接](https://www.bilibili.com/video/BV1Z8aYzXEV6/)
+[j01_task2视频链接](【作业Zero-one-哔哩哔哩】 https://b23.tv/s0ddiq9)
 
 ## 任务三
 
 实现了插入排序（InsertionSorter），每个未排序的元素都与前面的元素逐个相比较，不断交换直至自己应有的位置，葫芦娃的行为符合现实世界规则，具体实现效果如下： 
 
-[j01_task3视频链接](https://www.bilibili.com/video/BV1B7aBzTERz/)
+[j01_task3视频链接](【作业Zero-one-哔哩哔哩】 https://b23.tv/s0ddiq9)
 
 
 
